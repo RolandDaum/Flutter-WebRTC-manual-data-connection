@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 
-class WebRTCTxTConection {
+class WebRTCTxTConnection {
   late RTCPeerConnection peerConnection;
   late RTCDataChannel dataChannel;
   late RTCSessionDescription sdp; // Local Description (offer/answer)

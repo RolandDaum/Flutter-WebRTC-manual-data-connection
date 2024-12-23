@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:flutter_webrtc_test/WebRtcViewModel.dart';
+import 'package:flutter_webrtc_test/WebRTCTxTConnection.dart';
 
 void main() {
   runApp(const App());
@@ -17,7 +17,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  final webRTCTxtChannel = WebRTCTxTConection();
+  final webRTCTxtChannel = WebRTCTxTConnection();
 
   @override
   Widget build(BuildContext context) {
