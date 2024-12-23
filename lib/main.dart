@@ -17,7 +17,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  final viewModel = WebRtcViewModel();
+  final webRTCTxtChannel = WebRTCTxTConection();
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +30,12 @@ class _AppState extends State<App> {
             children: [
               TextButton(
                   onPressed: () {
-                    viewModel.offerConnection();
+                    webRTCTxtChannel.offerConnection();
                   },
                   child: const Text("Generate Offer and copy to clipboard")),
               TextButton(
                 onPressed: () async {
-                  viewModel.answerConnection(RTCSessionDescription(
+                  webRTCTxtChannel.answerConnection(RTCSessionDescription(
                       json.decode(((await Clipboard.getData('text/plain'))
                           ?.text)!)["sdp"],
                       'offer'));
@@ -45,7 +45,7 @@ class _AppState extends State<App> {
               ),
               TextButton(
                   onPressed: () async {
-                    viewModel.acceptAnswer(RTCSessionDescription(
+                    webRTCTxtChannel.acceptAnswer(RTCSessionDescription(
                         json.decode(((await Clipboard.getData('text/plain'))
                             ?.text)!)["sdp"],
                         'answer'));
@@ -53,7 +53,7 @@ class _AppState extends State<App> {
                   child: const Text("Accept Answer from clipboard")),
               TextButton(
                   onPressed: () {
-                    viewModel.sendMessage("Hello World!");
+                    webRTCTxtChannel.sendMessage("Hello World!");
                   },
                   child: const Text("Send Hello World!"))
             ],
